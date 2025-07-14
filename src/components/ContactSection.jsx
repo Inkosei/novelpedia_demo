@@ -21,11 +21,7 @@ export default function ContactSection() {
           Join Discord
         </button>
       </div>
-      <div className="flex gap-6 text-2xl text-white mb-8">
-        <span>🐦</span>
-        <span>🌿</span>
-        <span>✉️</span>
-      </div>
+
       <span className="text-purple-200 text-sm">
         © 2024 NovelPedia. Built by readers, for readers. Coming soon.
       </span>

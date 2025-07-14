@@ -3,7 +3,7 @@ export default function HeroSection() {
     <section id="hero" className="min-h-screen flex flex-col justify-center items-center text-white relative">
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" />
       <h1 className="text-5xl font-bold mb-6">
-        <span className="bg-black px-4 py-2 rounded-lg">Novel<span className="text-purple-300">Pedia</span></span>
+        <span className="bg-black px-4 py-2 rounded-lg">Novel<span className="text-purple-400">Pedia</span></span>
       </h1>
       <h2 className="text-3xl font-extrabold text-center mb-4">
         BY AUTHORS, FOR AUTHORS<br />BY READERS, FOR READERS

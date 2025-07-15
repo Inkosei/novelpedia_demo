@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Countdown from "./Countdown"; 
 
 export default function HeroSection() {
   // ---------------------------
@@ -95,6 +96,13 @@ export default function HeroSection() {
           <h2 className="text-xl md:text-3xl font-bold glowing-text">
             TO AUTHORS - TO READERS
           </h2>
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          className="w-full max-w-3xl mx-auto mb-12"
+        >
+          <Countdown targetDateUTC="2025-08-15T00:00:00Z" />
         </motion.div>
 
         {/* Constitution & Promise */}

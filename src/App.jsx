@@ -3,14 +3,17 @@ import Navbar from "./components/Navbar";
 import { HomePage } from './components/HomePage';
 import SupportPage from './components/SupportPage';
 import RoadmapPage from './components/RoadmapPage';
+import BackgroundBooks from './components/BackgroundBooks';
+import NewsPage from './components/NewsPage';
 
-const NewsPage = () => <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center"><h1 className="text-4xl">News Page</h1></div>;
 const AffiliatesPage = () => <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center"><h1 className="text-4xl">Affiliates Page</h1></div>;
 
 export default function App() {
   return (
-    
+    <>
+      <BackgroundBooks />
       <Router>
+        <BackgroundBooks />
         <div className="relative min-h-screen font-sans bg-gradient-to-br from-purple-700 to-purple-400 overflow-x-hidden text-white">
         <Navbar />
         <Routes>
@@ -23,5 +26,6 @@ export default function App() {
           </Routes>
         </div>
         </Router>
+        </>
   );
 }

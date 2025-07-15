@@ -4,7 +4,6 @@ import { useRef } from "react";
 export default function OurGoal() {
   const ref = useRef(null);
 
-  // framer-motion scroll progress for the section
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start center", "end center"]
@@ -30,7 +29,7 @@ export default function OurGoal() {
   const goals = [
     {
       title: "True Creative Ownership",
-      text: "Authors keep 100 % rights, royalties, and control—always."
+      text: "Authors keep 100% rights, royalties, and control—always."
     },
     {
       title: "Reader‑First Access",
@@ -80,7 +79,7 @@ export default function OurGoal() {
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
     >
-      {/* Heading */}
+
       <motion.h2
         className="text-4xl md:text-5xl font-bold mb-4 text-center"
         variants={fadeUp}
@@ -88,7 +87,6 @@ export default function OurGoal() {
         Our Goal: Build a Platform That Delivers
       </motion.h2>
 
-      {/* Intro paragraph */}
       <motion.p
         className="text-lg text-center max-w-3xl mb-10 text-white/80"
         variants={fadeUp}
@@ -110,7 +108,6 @@ export default function OurGoal() {
           />
         </div>
 
-        {/* Goal List */}
         <div className="flex-1 space-y-8">
           {goals.map((goal, index) => (
             <motion.div
@@ -127,7 +124,6 @@ export default function OurGoal() {
         </div>
       </div>
 
-      {/* Closing text */}
       <motion.p
         className="mt-12 text-center text-xl text-purple-100"
         variants={fadeUp}

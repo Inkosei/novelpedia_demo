@@ -6,6 +6,7 @@ import ValuesVision from "./components/ValuesVision";
 import AboutSection from "./components/AboutSection";
 import ContactSection from "./components/ContactSection";
 import Navbar from "./components/Navbar";
+import { HomePage } from './components/HomePage';
 
 const NewsPage = () => <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center"><h1 className="text-4xl">News Page</h1></div>;
 const FindUsPage = () => <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center"><h1 className="text-4xl">Find Us Page</h1></div>;
@@ -20,7 +21,7 @@ export default function App() {
         <div className="relative min-h-screen font-sans bg-gradient-to-br from-purple-700 to-purple-400 overflow-x-hidden text-white">
         <Navbar />
         <Routes>
-          <Route path="/" element={<HeroSection />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/news" element={<NewsPage />} />
           <Route path="/find-us" element={<FindUsPage />} />
           <Route path="/support" element={<SupportPage />} />

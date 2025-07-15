@@ -86,50 +86,101 @@ const authorRoadmap = [
 
 const readerRoadmap = [
   {
-    phase: "Phase 0 — Day‑One Delight",
-    title: "Open doors, zero friction.",
+    phase: "Phase 0A — Day‑One Delight",
+    title: "Search & Browse",
     description: `
-- Vertical Scroll Discovery
-- Mood & Pacing Filters
-- Long-Press Info Cards
-- Global Search
-- Genre Browse and Tag Landing Pages
-- Basic Filters & Sorting
-- Trending & New Releases
-- Story Previews
-- Author Profiles
-- Double‑Rating (Stars ★ + Likes ❤)
-- Site-Wide Genre Ban
-- Clean, Distraction-Free Reader
-- Typography Controls
-- In‑Page Notes
-- Dark/Light Themes
-- Responsive Design
-- Cross-Device Progress Sync
-- Chapter Navigation
-- Reading History
-- Save & Resume
-- Keyboard & Touch Controls
-- Content Safety Tools
-- Basic TTS
-- Equal Exposure Policy
-- Community Comments
-- Authentic Review Policy
-- Collaborative Collections
-- Full Community Feed
-- Forums & Threads
-- Follow Author / Story Alerts
-- Guest Access & Pseudonym Mode
-- Permanent Likes/Stars
-- Comment Access
-- Submit Text Reviews
-- Bookmark Stories
-- Notifications
-- User Profile Page
-- Vanity Options
-- Author Posts & Polls
-- Privacy Shield
-- Readers ≠ Wallets
+- Vertical Scroll Discovery ▸ A TikTok-style feed for novels, enabling quick previews and frictionless browsing, including synopsis, quotes, and other novel content.
+- Global Search ▸ Search by title, tag, or author, with autocomplete suggestions and typo tolerance.
+- Basic Filters & Sorting ▸ On search results and browse pages, allowing sorting by genre, tag, status (ongoing/completed), most recent, highest rated, or most commented.
+- Genre Browse and Tag Landing Pages ▸ Dedicated pages for exploring specific genres and tags.
+- Site-Wide Genre Ban ▸ Flag genres that you don't prefer sitewide. No more spammy home screens.
+    `,
+  },
+  {
+    phase: "Phase 0B — Day‑One Delight",
+    title: "Story Discovery",
+    description: `
+- Mood & Pacing Filters ▸ Options to refine searches beyond genre.
+- Long-Press Info Cards ▸ Access all necessary story details without navigating to a new page.
+- Sections for Trending Stories and New Releases ▸ Curated lists of popular and newly published content.
+- Story Previews ▸ In lists and search results, displaying cover, title, author, star rating, synopsis, views, and likes.
+- Author Profiles ▸ Showcasing author bio, badge, profile picture, and all published stories.
+- Double‑Rating (Stars ★ + Likes ❤) ▸ Combining Stars for nuanced critical feedback with Likes for quick "enjoyed it" signals to achieve better recommendation accuracy and transparency.
+    `,
+  },
+  {
+    phase: "Phase 0C — Day‑One Delight",
+    title: "Reading Interface",
+    description: `
+- Clean, Distraction-Free Reader layout ▸ An uncluttered design with minimized UI elements.
+- Typography Controls ▸ Options to change fonts, spacing, margins, and dyslexia-friendly options.
+- Dark/Light and Custom Themes ▸ Options for custom background and font colors, saved locally.
+- Responsive Design ▸ Ensures the reading view works seamlessly across desktop, tablet, and mobile devices.
+- Chapter Navigation ▸ With previous/next buttons and a persistent table of contents.
+- Keyboard & Touch Controls ▸ For navigation within the reader.
+    `,
+  },
+  {
+    phase: "Phase 0D — Day‑One Delight",
+    title: "Reading Progress",
+    description: `
+- Cross-Device Progress Sync ▸ Enables readers to resume exactly where they left off on any device.
+- Reading History ▸ Tracks stories and chapters read (temporarily for guests, permanently synced for registered users).
+- Save & Resume functionality ▸ Automatically remembers the reader's last position.
+- In‑Page Notes ▸ Create notes on books, save power systems, quotes, or just add your notes.
+- In-built Note-taking ▸ For quotes, characters, or lore.
+- Basic Text-to-Speech (TTS) functionality ▸ Leverages browser/OS built-in capabilities.
+    `,
+  },
+  {
+    phase: "Phase 0E — Day‑One Delight",
+    title: "Safety & Policy",
+    description: `
+- Content Safety Tools ▸ Including trigger warnings, spoiler protection, and a Quiet Mode to mute notifications and reduce visual clutter.
+- Equal Exposure Policy ▸ Every novel gets an equal chance.
+- Privacy Shield ▸ With encrypted log-in or pseudonym mode, ensuring minimal data collection and no third-party trackers.
+- Readers ≠ Wallets ▸ No paywalls, with monetization always optional and transparent, ensuring core content remains fully free and accessible.
+    `,
+  },
+  {
+    phase: "Phase 0F — Day‑One Delight",
+    title: "Comments & Reviews",
+    description: `
+- Chapter & Paragraph Comments ▸ Allowing readers to react, upvote, and reply inline.
+- Authentic Review Policy ▸ Requires explanations for ratings below 3★ to reduce spammy feedback, with reviewer history visibility. Authors also cannot delete constructive reviews.
+- Guest Access & Pseudonym Mode ▸ For browsing public stories and interacting (commenting, liking, rating) temporarily without an account, prompting registration to save contributions permanently.
+- Permanent Likes/Star Ratings ▸ For registered users, with an average rating displayed.
+- Full Comment Access ▸ For registered users, including upvote/downvote functionality.
+- Submit Text Reviews ▸ On the main story page for longer feedback, compulsory with a rating.
+    `,
+  },
+  {
+    phase: "Phase 0G — Day‑One Delight",
+    title: "Community Features",
+    description: `
+- Public & Collaborative Collections ▸ Crowd-curated lists allowing users to create, edit, and share their favorite story lists.
+- Full Community Feed ▸ Where readers and authors can make posts.
+- Community Forums & Threads ▸ Including site-wide, book-specific, and live chat rooms.
+- Follow Author / Story Alerts ▸ To get notified when new chapters drop.
+- Author Posts & Polls ▸ In a scroll feed for logged-in users, allowing comments and reactions.
+    `,
+  },
+  {
+    phase: "Phase 0H — Day‑One Delight",
+    title: "Personal Library",
+    description: `
+- Bookmark Stories ▸ To a personal Library/Favorites section for easy access.
+- "To-Read" and "Currently Reading" Lists ▸ Within the library.
+- Notifications ▸ For new chapter alerts, replies to comments, and followed author activity.
+- Registration & Authentication ▸ With email/password and optional social login.
+    `,
+  },
+  {
+    phase: "Phase 0I — Day‑One Delight",
+    title: "User Profiles",
+    description: `
+- User Profile Page ▸ Displaying avatar, bio, badges, reading stats, collections (public + private), comment & rating history, and achievements.
+- User Vanity options ▸ Like achievement displays, profile banners, pictures, frames, and name tags.
     `,
   },
   {

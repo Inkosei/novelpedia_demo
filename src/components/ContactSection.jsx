@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function ContactSection() {
   return (
     <motion.div
-      className="flex flex-col items-center justify-center text-center"
+      className="flex flex-col items-center justify-center text-center h-[450px]"
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}

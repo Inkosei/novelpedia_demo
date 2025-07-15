@@ -1,6 +1,7 @@
 import HeroSection from "./HeroSection";
 import WhatIsNovelPedia from "./WhatIsNovelPedia";
 import OurGoal from "./OurGoal";
+import ContactSection from "./ContactSection";
 
 export function HomePage() {
   return (
@@ -8,6 +9,7 @@ export function HomePage() {
       <HeroSection />
       <WhatIsNovelPedia />
       <OurGoal />
+      <ContactSection />
     </>
   );
 }

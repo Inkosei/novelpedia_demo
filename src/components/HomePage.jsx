@@ -5,11 +5,11 @@ import ContactSection from "./ContactSection";
 
 export function HomePage() {
   return (
-    <>
+    <div>
       <HeroSection />
       <WhatIsNovelPedia />
       <OurGoal />
       <ContactSection />
-    </>
+    </div>
   );
 }

@@ -2,10 +2,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from "./components/Navbar";
 import { HomePage } from './components/HomePage';
 import SupportPage from './components/SupportPage';
+import RoadmapPage from './components/RoadmapPage';
 
 const NewsPage = () => <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center"><h1 className="text-4xl">News Page</h1></div>;
 const AffiliatesPage = () => <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center"><h1 className="text-4xl">Affiliates Page</h1></div>;
-const RoadmapPage = () => <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center"><h1 className="text-4xl">Roadmap Page</h1></div>;
 
 export default function App() {
   return (

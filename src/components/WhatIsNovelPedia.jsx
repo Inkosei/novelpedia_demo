@@ -36,7 +36,7 @@ export default function WhatIsNovelPedia() {
         className="text-4xl md:text-5xl font-bold mb-6 text-center"
         variants={fadeUp}
       >
-        What is <span className="bg-black px-4 py-2 rounded-lg">Novel<span className="text-purple-400">Pedia</span></span>
+        What is <span className="px-4 py-2 text-purple-100 rounded-lg">Novel<span className="text-black">Pedia</span></span>
       </motion.h2>
 
       <motion.blockquote

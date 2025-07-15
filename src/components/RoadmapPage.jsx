@@ -86,7 +86,7 @@ const authorRoadmap = [
 
 const readerRoadmap = [
   {
-    phase: "Phase 0A — Day‑One Delight",
+    phase: "Phase A — Day‑One Delight",
     title: "Search & Browse",
     description: `
 - Vertical Scroll Discovery ▸ A TikTok-style feed for novels, enabling quick previews and frictionless browsing, including synopsis, quotes, and other novel content.
@@ -97,7 +97,7 @@ const readerRoadmap = [
     `,
   },
   {
-    phase: "Phase 0B — Day‑One Delight",
+    phase: "Phase B — Day‑One Delight",
     title: "Story Discovery",
     description: `
 - Mood & Pacing Filters ▸ Options to refine searches beyond genre.
@@ -109,7 +109,7 @@ const readerRoadmap = [
     `,
   },
   {
-    phase: "Phase 0C — Day‑One Delight",
+    phase: "Phase C — Day‑One Delight",
     title: "Reading Interface",
     description: `
 - Clean, Distraction-Free Reader layout ▸ An uncluttered design with minimized UI elements.
@@ -121,7 +121,7 @@ const readerRoadmap = [
     `,
   },
   {
-    phase: "Phase 0D — Day‑One Delight",
+    phase: "Phase D — Day‑One Delight",
     title: "Reading Progress",
     description: `
 - Cross-Device Progress Sync ▸ Enables readers to resume exactly where they left off on any device.
@@ -133,7 +133,7 @@ const readerRoadmap = [
     `,
   },
   {
-    phase: "Phase 0E — Day‑One Delight",
+    phase: "Phase E — Day‑One Delight",
     title: "Safety & Policy",
     description: `
 - Content Safety Tools ▸ Including trigger warnings, spoiler protection, and a Quiet Mode to mute notifications and reduce visual clutter.
@@ -143,7 +143,7 @@ const readerRoadmap = [
     `,
   },
   {
-    phase: "Phase 0F — Day‑One Delight",
+    phase: "Phase F — Day‑One Delight",
     title: "Comments & Reviews",
     description: `
 - Chapter & Paragraph Comments ▸ Allowing readers to react, upvote, and reply inline.
@@ -155,7 +155,7 @@ const readerRoadmap = [
     `,
   },
   {
-    phase: "Phase 0G — Day‑One Delight",
+    phase: "Phase G — Day‑One Delight",
     title: "Community Features",
     description: `
 - Public & Collaborative Collections ▸ Crowd-curated lists allowing users to create, edit, and share their favorite story lists.
@@ -166,7 +166,7 @@ const readerRoadmap = [
     `,
   },
   {
-    phase: "Phase 0H — Day‑One Delight",
+    phase: "Phase H — Day‑One Delight",
     title: "Personal Library",
     description: `
 - Bookmark Stories ▸ To a personal Library/Favorites section for easy access.
@@ -176,7 +176,7 @@ const readerRoadmap = [
     `,
   },
   {
-    phase: "Phase 0I — Day‑One Delight",
+    phase: "Phase I — Day‑One Delight",
     title: "User Profiles",
     description: `
 - User Profile Page ▸ Displaying avatar, bio, badges, reading stats, collections (public + private), comment & rating history, and achievements.

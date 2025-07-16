@@ -211,11 +211,11 @@ Please change the parent <Route path="${C}"> to <Route path="${C==="/"?"*":`${C}
           .animate-floating {
             animation: floating 6s ease-in-out infinite;
           }
-        `})]})}const $E=[{date:"15-07-2025",title:"Epic Update 🎉",content:`
+        `})]})}const $E=[{date:"16-07-2025",title:"Epic Update 🎉",content:`
 We launched a new site today! 🎊
-- New design
-- New features
-- New content
+- 99% kiri 1% kiri's black cat
+- Brand new look, amazing wallpaper right??
+- House of horrors > LOTM
     `}];function IE(){const n=[...$E].sort((i,s)=>{const[r,u,f]=i.date.split("-").map(Number),[d,p,m]=s.date.split("-").map(Number),h=new Date(f,u-1,r);return new Date(m,p-1,d)-h});return R.jsxs("div",{className:"min-h-screen pt-32 md:pt-40 text-white p-4 sm:p-8",children:[R.jsx("h1",{className:"text-5xl md:text-6xl font-extrabold mb-12 text-center text-violet-300",style:{textShadow:"0 0 15px #a78bfa, 0 0 25px #8b5cf6"},children:"Latest News"}),R.jsx("div",{className:"max-w-4xl mx-auto space-y-8",children:n.map((i,s)=>R.jsxs("div",{className:`\r
               bg-black/30 \r
               border border-violet-600/50 \r

@@ -70,7 +70,7 @@ export default function HeroSection() {
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 inline-block"
         >
           <span className="bg-black px-4 md:px-6 py-2 md:py-3 rounded-lg border border-purple-500/50 shadow-2xl">
-            Novel<span className="text-purple-400">Pedia</span>
+            Novel<span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-purple-400">Pedia</span>
           </span>
         </motion.h1>
 

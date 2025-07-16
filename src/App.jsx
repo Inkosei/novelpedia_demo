@@ -6,26 +6,36 @@ import RoadmapPage from './components/RoadmapPage';
 import BackgroundBooks from './components/BackgroundBooks';
 import NewsPage from './components/NewsPage';
 
-const AffiliatesPage = () => <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center"><h1 className="text-4xl">Affiliates Page</h1></div>;
-
 export default function App() {
   return (
-    <>
-      <BackgroundBooks />
+ <>
+      <div
+        className="
+          fixed inset-0
+          bg-cover bg-center
+          bg-no-repeat
+          opacity-100
+          
+          z-[-1]
+        "
+        style={{ backgroundImage: "url('/bg-cover.png')" }}
+      ></div>
+
+
       <Router>
         <BackgroundBooks />
-        <div className="relative min-h-screen font-sans bg-gradient-to-br from-purple-700 to-purple-400 overflow-x-hidden text-white">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/news" element={<NewsPage />} />
-          <Route path="/support" element={<SupportPage />} />
-          <Route path="/affiliates" element={<AffiliatesPage />} />
-          <Route path="/roadmap" element={<RoadmapPage />} />
-               
+
+        <div className="relative min-h-screen font-sans overflow-x-hidden text-white">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="/support" element={<SupportPage />} />
+            <Route path="/roadmap" element={<RoadmapPage />} />
           </Routes>
         </div>
-        </Router>
-        </>
+
+      </Router>
+    </>
   );
 }

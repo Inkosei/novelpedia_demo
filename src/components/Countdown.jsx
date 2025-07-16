@@ -25,7 +25,8 @@ export default function Countdown({ targetDateUTC }) {
   ];
 
   return (
-    <div className="flex gap-4 justify-center items-center flex-wrap">
+    // Container now uses smaller gaps on mobile and flex-nowrap to prevent line breaks
+    <div className="flex gap-2 sm:gap-4 justify-center items-center flex-nowrap">
       {boxes.map((box) => (
         <FlipBox key={box.label} value={box.value} label={box.label} />
       ))}
@@ -39,28 +40,44 @@ function FlipBox({ value, label }) {
       <AnimatePresence mode="popLayout">
         <motion.div
           key={value}
-          initial={{ rotateX: 90, opacity: 0 }}
-          animate={{ rotateX: 0, opacity: 1 }}
-          exit={{ rotateX: -90, opacity: 0 }}
+          initial={{ rotateX: 90, y: -20, opacity: 0 }}
+          animate={{
+            rotateX: 0,
+            y: 0,
+            opacity: 1,
+            // Adds a "flash" or "pulse" glow on each number change
+            boxShadow: [
+              "0 0 10px rgba(168, 85, 247, 0.2)",
+              "0 0 30px rgba(168, 85, 247, 0.7)",
+              "0 0 10px rgba(168, 85, 247, 0.2)",
+            ],
+          }}
+          exit={{ rotateX: -90, y: 20, opacity: 0 }}
           transition={{
-            duration: 0.5,
+            duration: 0.6,
             ease: "easeInOut",
           }}
           className="
-            w-20 md:w-24 h-24 md:h-28
-            bg-gray-900
-            border border-purple-500
+            w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 /* Responsive sizing */
+            bg-black/30 /* Frosted glass effect */
+            border border-violet-600/50
+            backdrop-blur-sm
             rounded-lg
             flex justify-center items-center
-            text-3xl md:text-4xl font-mono font-bold
-            shadow-[0_0_20px_rgba(168,85,247,0.7)]
-            text-purple-300
+            text-2xl sm:text-3xl md:text-4xl font-mono font-bold
+            shadow-[0_0_10px_rgba(168,85,247,0.3)]
+            hover:shadow-[0_0_20px_rgba(168,85,247,0.6)] /* Enhanced hover glow */
+            transition-shadow duration-300
+            text-violet-200
           "
         >
-          {value.toString().padStart(2, "0")}
+          {/* Inner text glow for more depth */}
+          <span style={{ textShadow: "0 0 8px #c4b5fd" }}>
+            {value.toString().padStart(2, "0")}
+          </span>
         </motion.div>
       </AnimatePresence>
-      <span className="text-purple-400 mt-2 text-xs md:text-sm uppercase tracking-wide">
+      <span className="text-violet-400 mt-3 text-xs md:text-sm uppercase tracking-wider">
         {label}
       </span>
     </div>

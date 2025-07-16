@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { FaTimes } from "react-icons/fa"
 import ContactSection from "./ContactSection";
 
 const authorRoadmap = [
@@ -225,129 +226,203 @@ const readerRoadmap = [
   },
 ];
 
+function groupReaderPhases(roadmap) {
+  const grouped = [];
+  const dayOneItems = [];
+  const otherItems = [];
+
+  roadmap.forEach(item => {
+    if (item.phase.includes("Day‑One Delight")) {
+      dayOneItems.push(item);
+    } else {
+      otherItems.push(item);
+    }
+  });
+
+  if (dayOneItems.length > 0) {
+    grouped.push({
+      phase: "☀️ Day‑One Delight",
+      title: "Core Features Available at Launch",
+      isGroup: true,
+      items: dayOneItems.map(item => ({ ...item, originalPhase: item.phase, phase: item.phase.split('—')[0].trim() })),
+    });
+  }
+
+  return [...grouped, ...otherItems];
+}
 
 
+// --- NEW MODAL COMPONENT ---
+const RoadmapModal = ({ content, closeModal }) => {
+  // Parse the description string into a list of styled items
+  const renderDescription = (desc) => {
+    if (!desc) return null;
+    return desc.trim().split('\n').map((line, index) => {
+      const isListItem = line.trim().startsWith('-');
+      return (
+        <p key={index} className={isListItem ? "ml-4 pl-2 relative before:content-['▸'] before:absolute before:left-0 before:text-violet-400" : ""}>
+          {isListItem ? line.trim().substring(1).trim() : line}
+        </p>
+      );
+    });
+  };
+
+  return (
+    <AnimatePresence>
+      <motion.div
+        className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={closeModal}
+      >
+        <motion.div
+          className="bg-black/50 backdrop-blur-md border border-violet-500 rounded-xl shadow-2xl shadow-violet-500/20 max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative"
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.9, opacity: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          onClick={(e) => e.stopPropagation()} // Prevent closing modal when clicking inside
+        >
+          <motion.button
+            className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+            onClick={closeModal}
+            whileHover={{ scale: 1.2, rotate: 90 }}
+          >
+            <FaTimes size={24} />
+          </motion.button>
+
+          <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-violet-300">{content.originalPhase || content.phase}</h2>
+          <h3 className="text-lg sm:text-xl font-semibold mb-6 text-gray-200">{content.title}</h3>
+          <div className="space-y-2 text-gray-300 leading-relaxed">
+            {renderDescription(content.description)}
+          </div>
+        </motion.div>
+      </motion.div>
+    </AnimatePresence>
+  );
+};
+
+
+// --- MAIN ROADMAP PAGE COMPONENT ---
 export default function RoadmapPage() {
   const [selected, setSelected] = useState("author");
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState({});
 
   const ref = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start center", "end center"],
-  });
-
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start center", "end center"] });
   const barHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
-  const data = selected === "author" ? authorRoadmap : readerRoadmap;
+  // Use the helper function to process data for rendering
+  const data = selected === "author" ? authorRoadmap : groupReaderPhases(readerRoadmap);
 
   const openModal = (phase) => {
     setModalContent(phase);
     setModalOpen(true);
   };
-
-  const closeModal = () => {
-    setModalOpen(false);
-  };
+  const closeModal = () => setModalOpen(false);
 
   return (
     <>
-      <div
-        ref={ref}
-        className="relative px-4 py-8 max-w-6xl mx-auto flex pt-30 pb-40"
-      >
-        {/* Glowing Road */}
-        <div className="relative w-6 sm:w-8 flex-shrink-0 mr-8">
-          {/* background “road” */}
-          <div className="absolute left-1/2 top-0 -translate-x-1/2 w-2 sm:w-3 h-full rounded-full bg-purple-800 shadow-[0_0_20px_4px_rgba(147,51,234,0.5)]"></div>
-
-          {/* animated glowing progress */}
+      <div ref={ref} className="relative px-4 py-8 max-w-6xl mx-auto flex pt-32 md:pt-40 pb-40">
+        {/* Themed Glowing Road */}
+        <div className="relative w-2 sm:w-3 flex-shrink-0 mr-6 sm:mr-8">
+          <div className="absolute left-1/2 top-0 -translate-x-1/2 w-full h-full rounded-full bg-black/30"></div>
           <motion.div
             style={{ height: barHeight }}
-            className="absolute left-1/2 top-0 -translate-x-1/2 w-2 sm:w-3 rounded-full bg-amber-400 shadow-[0_0_30px_8px_rgba(251,191,36,0.7)]"
+            className="absolute left-1/2 top-0 -translate-x-1/2 w-full rounded-full bg-violet-500 shadow-[0_0_15px_5px_rgba(139,92,246,0.5)]"
           />
         </div>
 
         {/* Roadmap content */}
         <div className="flex-1">
           <motion.h1
-            className="text-5xl sm:text-6xl font-extrabold text-center mb-10 bg-gradient-to-r from-amber-400 via-pink-500 to-black bg-clip-text text-transparent"
+            className="text-5xl sm:text-6xl font-extrabold text-center mb-12 text-violet-300"
+            style={{ textShadow: "0 0 15px #a78bfa, 0 0 25px #8b5cf6" }}
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            RoadMap
+            Roadmap
           </motion.h1>
 
-          <div className="flex justify-center mb-8 gap-4">
-            <button
-              className={`px-6 py-2 rounded-full font-semibold ${
+          <div className="flex justify-center mb-10 gap-2 sm:gap-4">
+            <motion.button
+              className={`px-4 py-2 sm:px-6 sm:py-2.5 rounded-full font-semibold transition-all duration-300 ${
                 selected === "author"
-                  ? "bg-white text-purple-700"
-                  : "bg-purple-800 hover:bg-purple-700"
+                  ? "bg-violet-600 text-white shadow-md shadow-violet-500/40"
+                  : "bg-transparent border border-violet-800 text-violet-300 hover:bg-violet-900/50"
               }`}
               onClick={() => setSelected("author")}
+              whileTap={{ scale: 0.95 }}
             >
               For Authors
-            </button>
-            <button
-              className={`px-6 py-2 rounded-full font-semibold ${
+            </motion.button>
+            <motion.button
+              className={`px-4 py-2 sm:px-6 sm:py-2.5 rounded-full font-semibold transition-all duration-300 ${
                 selected === "reader"
-                  ? "bg-white text-purple-700"
-                  : "bg-purple-800 hover:bg-purple-700"
+                  ? "bg-violet-600 text-white shadow-md shadow-violet-500/40"
+                  : "bg-transparent border border-violet-800 text-violet-300 hover:bg-violet-900/50"
               }`}
               onClick={() => setSelected("reader")}
+              whileTap={{ scale: 0.95 }}
             >
               For Readers
-            </button>
+            </motion.button>
           </div>
 
-          <div className="grid gap-6">
+          <div className="grid gap-8">
             {data.map((phase, idx) => (
-              <motion.div
-                key={idx}
-                className="bg-purple-800/60 backdrop-blur p-6 rounded-xl shadow-lg border border-purple-300"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              >
-                <h2 className="text-2xl font-bold mb-2">{phase.phase}</h2>
-                <p className="text-lg font-semibold mb-4">{phase.title}</p>
-                <button
-                  onClick={() => openModal(phase)}
-                  className="bg-white text-purple-700 font-semibold px-4 py-2 rounded hover:bg-purple-300 hover:text-white transition"
+              // CONDITIONAL RENDERING: Check if it's a group or a single item
+              phase.isGroup ? (
+                // --- RENDER THE GROUPED CONTAINER ---
+                <motion.div key={idx} className="bg-black/30 border border-violet-700/50 rounded-xl p-4 sm:p-6"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                 >
-                  Read More
-                </button>
-              </motion.div>
+                  <h2 className="text-3xl font-bold mb-2 text-violet-300">{phase.phase}</h2>
+                  <p className="text-lg text-gray-300 mb-6">{phase.title}</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {phase.items.map((item, itemIdx) => (
+                      <div key={itemIdx} className="bg-violet-900/30 p-4 rounded-lg flex flex-col justify-between border border-violet-800/60">
+                        <div>
+                          <h3 className="font-bold text-gray-100">{item.phase}</h3>
+                          <p className="text-violet-200 text-sm mb-3">{item.title}</p>
+                        </div>
+                        <button onClick={() => openModal(item)} className="mt-2 text-sm w-full bg-violet-700/70 text-white font-semibold px-3 py-1.5 rounded hover:bg-violet-600 transition-colors">
+                          Details
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              ) : (
+                // --- RENDER A STANDARD SINGLE CARD ---
+                <motion.div key={idx} className="bg-black/30 border border-violet-700/50 backdrop-blur-sm p-6 rounded-xl"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                >
+                  <h2 className="text-2xl font-bold mb-2 text-violet-300">{phase.phase}</h2>
+                  <p className="text-lg font-semibold mb-4 text-gray-200">{phase.title}</p>
+                  <button onClick={() => openModal(phase)} className="bg-transparent border border-violet-500 text-violet-300 font-semibold px-4 py-2 rounded hover:bg-violet-500 hover:text-white transition-colors">
+                    Read More
+                  </button>
+                </motion.div>
+              )
             ))}
           </div>
         </div>
-
-        {modalOpen && (
-          <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
-            <div className="bg-purple-900 max-w-2xl w-full p-6 rounded-lg relative">
-              <button
-                className="absolute top-2 right-2 text-white hover:text-purple-300 text-2xl"
-                onClick={closeModal}
-              >
-                &times;
-              </button>
-              <h2 className="text-3xl font-bold mb-4">{modalContent.phase}</h2>
-              <h3 className="text-xl font-semibold mb-4">
-                {modalContent.title}
-              </h3>
-              <pre className="whitespace-pre-wrap text-gray-100">
-                {modalContent.description}
-              </pre>
-            </div>
-          </div>
-        )}
       </div>
+      
+      {modalOpen && <RoadmapModal content={modalContent} closeModal={closeModal} />}
+      
       <ContactSection />
     </>
   );
 }
+

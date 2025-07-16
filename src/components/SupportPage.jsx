@@ -2,50 +2,30 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaUsers, FaHeart, FaGithub, FaDiscord, FaLinkedinIn } from 'react-icons/fa';
 
+// Animation variants can remain the same as they control behavior, not theme.
 const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 20,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
 const cardHoverVariants = {
   hover: {
-    scale: 1.05,
-    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.05)", // Tailwind shadow-xl equivalent
-    transition: {
-      duration: 0.3,
-    },
+    scale: 1.03,
+    boxShadow: "0 10px 20px rgba(0,0,0,0.4)",
+    transition: { duration: 0.3 },
   },
 };
 
 const buttonHoverVariants = {
   hover: {
     y: -3,
-    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)", // Tailwind shadow-md equivalent
-    transition: {
-      duration: 0.2,
-    },
+    transition: { duration: 0.2 },
   },
 };
 
-// Container for staggering items
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2, 
-    },
-  },
+  visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
 };
 
 const itemVariants = {
@@ -53,84 +33,73 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
-
 const SupportPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-700 to-purple-400 text-white flex flex-col items-center py-16 px-4 pt-24">
-      {/* Main title with Framer Motion */}
+    <div className="min-h-screen text-gray-200 flex flex-col items-center py-16 px-4 pt-32 md:pt-40">
       <motion.h1
-        className="text-5xl font-bold mb-12"
+        className="text-5xl font-bold mb-12 text-violet-300 text-center"
+        style={{ textShadow: "0 0 15px #a78bfa, 0 0 25px #8b5cf6" }}
         variants={fadeInAnimationVariants}
         initial="initial"
         animate="animate"
-        transition={{ delay: 0.1 }}
       >
-        Support us
+        Support Us
       </motion.h1>
 
-      {/* Introductory text box with Framer Motion */}
       <motion.div
-        className="bg-purple-800 bg-opacity-70 rounded-lg p-8 mb-12 max-w-3xl text-center shadow-lg"
+        className="bg-black/30 border border-violet-600/50 backdrop-blur-sm rounded-lg p-8 mb-12 max-w-3xl text-center shadow-lg"
         variants={fadeInAnimationVariants}
         initial="initial"
         animate="animate"
-        whileHover="hover"
-        transition={{ delay: 0.3 }}
-        hover={{ scale: 1.03, boxShadow: "0 15px 30px rgba(0,0,0,0.3)" }} // Direct hover for simplicity, or use cardHoverVariants
+        whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
+        transition={{ delay: 0.2 }}
       >
-        <p className="text-xl leading-relaxed">
-          Simplest way of supporting would be joining us on social medias and discord and telling your friends
+        <p className="text-xl leading-relaxed text-gray-200">
+          The simplest way to support us is by joining our community and telling your friends about NovelPedia.
         </p>
       </motion.div>
 
-      {/* Grid container for staggering */}
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full"
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
       >
         {/* Social Support Section */}
         <motion.div
-          className="bg-purple-800 bg-opacity-70 rounded-lg p-8 shadow-lg flex flex-col items-center text-center"
-          variants={itemVariants} // Inherits from container's stagger
-          whileHover="hover"
-          transition={{ ease: "easeOut" }}
-          hover={cardHoverVariants.hover} // Applying card hover variants
+          className="bg-black/30 border border-violet-600/50 backdrop-blur-sm rounded-lg p-8 shadow-lg flex flex-col items-center text-center"
+          variants={itemVariants}
+          whileHover={cardHoverVariants.hover}
         >
-          <div className="flex items-center text-3xl font-semibold mb-6">
-            <FaUsers className="h-8 w-8 mr-3 text-purple-200 transition-colors duration-300" />
-            Social Support
+          <div className="flex items-center text-3xl font-semibold mb-6 text-gray-100">
+            <FaUsers className="h-8 w-8 mr-3 text-violet-300" />
+            Join the Community
           </div>
-          <p className="mb-8 text-lg">
-            Other options to support: social media, discord etc.
+          <p className="mb-8 text-lg text-gray-300">
+            Follow our journey, contribute to discussions, and connect with fellow creators and readers.
           </p>
           <div className="w-full space-y-4">
+            {/* Themed Buttons */}
             <motion.button
-              className="flex items-center justify-center w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-3 px-4 rounded-lg"
-              whileHover="hover"
-              transition={{ ease: "easeOut" }}
-              hover={buttonHoverVariants.hover} // Applying button hover variants
+              className="flex items-center justify-center w-full border border-violet-500 bg-transparent text-violet-300 font-bold py-3 px-4 rounded-lg transition-colors duration-300 hover:bg-violet-500 hover:text-white"
+              whileHover={buttonHoverVariants.hover}
             >
-              <FaGithub className="h-5 w-5 mr-2" />
+              <FaGithub className="h-5 w-5 mr-3" />
               Follow on GitHub
             </motion.button>
             <motion.button
-              className="flex items-center justify-center w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-3 px-4 rounded-lg"
-              whileHover="hover"
-              transition={{ ease: "easeOut" }}
-              hover={buttonHoverVariants.hover}
+              className="flex items-center justify-center w-full border border-violet-500 bg-transparent text-violet-300 font-bold py-3 px-4 rounded-lg transition-colors duration-300 hover:bg-violet-500 hover:text-white"
+              whileHover={buttonHoverVariants.hover}
             >
-              <FaDiscord className="h-5 w-5 mr-2" />
-              Join Discord
+              <FaDiscord className="h-5 w-5 mr-3" />
+              Join our Discord
             </motion.button>
             <motion.button
-              className="flex items-center justify-center w-full bg-purple-700 hover:bg-purple-600 text-white font-bold py-3 px-4 rounded-lg"
-              whileHover="hover"
-              transition={{ ease: "easeOut" }}
-              hover={buttonHoverVariants.hover}
+              className="flex items-center justify-center w-full border border-violet-500 bg-transparent text-violet-300 font-bold py-3 px-4 rounded-lg transition-colors duration-300 hover:bg-violet-500 hover:text-white"
+              whileHover={buttonHoverVariants.hover}
             >
-              <FaLinkedinIn className="h-5 w-5 mr-2" />
+              <FaLinkedinIn className="h-5 w-5 mr-3" />
               Connect on LinkedIn
             </motion.button>
           </div>
@@ -138,24 +107,21 @@ const SupportPage = () => {
 
         {/* Monetary Support Section */}
         <motion.div
-          className="bg-purple-800 bg-opacity-70 rounded-lg p-8 shadow-lg flex flex-col items-center text-center"
-          variants={itemVariants} // Inherits from container's stagger
-          whileHover="hover"
-          transition={{ ease: "easeOut" }}
-          hover={cardHoverVariants.hover} // Applying card hover variants
+          className="bg-black/30 border border-violet-600/50 backdrop-blur-sm rounded-lg p-8 shadow-lg flex flex-col items-center text-center"
+          variants={itemVariants}
+          whileHover={cardHoverVariants.hover}
         >
-          <div className="flex items-center text-3xl font-semibold mb-6">
-            <FaHeart className="h-8 w-8 mr-3 text-purple-200 transition-colors duration-300" />
+          <div className="flex items-center text-3xl font-semibold mb-6 text-gray-100">
+            <FaHeart className="h-8 w-8 mr-3 text-violet-300" />
             Monetary Support
           </div>
-          <p className="mb-8 text-lg">
-            If you'd like to support monetarily, this is our patreon / onlyfans
+          <p className="mb-8 text-lg text-gray-300">
+            If you're able, direct support helps us cover server costs and accelerate development.
           </p>
+          {/* Themed Primary CTA Button */}
           <motion.button
-            className="flex items-center justify-center w-full bg-orange-500 hover:bg-orange-400 text-white font-bold py-4 px-6 rounded-lg text-lg"
-            whileHover="hover"
-            transition={{ ease: "easeOut" }}
-            hover={buttonHoverVariants.hover}
+            className="flex items-center justify-center w-full bg-violet-600 hover:bg-violet-500 text-white font-bold py-4 px-6 rounded-lg text-lg transition-colors duration-300 hover:shadow-lg hover:shadow-violet-500/40"
+            whileHover={buttonHoverVariants.hover}
           >
             <FaHeart className="h-6 w-6 mr-3" />
             Support on Patreon

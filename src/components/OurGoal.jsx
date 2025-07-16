@@ -33,11 +33,11 @@ export default function OurGoal() {
     },
     {
       title: "Reader‑First Access",
-      text: "Innovative discovery systems, advanced filter options, Easy to navigate UX and No hard paywalls, no bait‑and‑switch chapters, no intrusive ads. Great stories stay reachable."
+      text: "Innovative discovery systems, advanced filter options, easy-to-navigate UX, and no hard paywalls. Great stories stay reachable."
     },
     {
       title: "Ethical Monetization",
-      text: "Tips, Patreon embeds, fair revenue share, zero hidden fees, zero platform tax on generosity."
+      text: "Tips, Patreon embeds, fair revenue share, zero hidden fees, and zero platform tax on generosity."
     },
     {
       title: "A Craft‑Lover’s Toolkit",
@@ -73,62 +73,67 @@ export default function OurGoal() {
     <motion.section
       id="goal"
       ref={ref}
-      className="w-full py-20 px-4 md:px-12 text-white flex flex-col items-center"
+      className="w-full py-20 px-4 md:px-12 text-gray-200 flex flex-col items-center"
       variants={container}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.2 }}
     >
-
       <motion.h2
-        className="text-4xl md:text-5xl font-bold mb-4 text-center"
+        className="text-4xl md:text-5xl font-bold mb-4 text-center text-gray-100"
         variants={fadeUp}
       >
         Our Goal: Build a Platform That Delivers
       </motion.h2>
 
       <motion.p
-        className="text-lg text-center max-w-3xl mb-10 text-white/80"
+        className="text-lg text-center max-w-3xl mb-16 text-gray-300"
         variants={fadeUp}
       >
         At NovelPedia, every design choice circles back to one simple promise:{" "}
-        <span className="font-bold text-white">
+        <span className="font-bold text-gray-100">
           deliver genuine value to the people who write, read, and live inside stories
         </span>. Here’s what that looks like in practice:
       </motion.p>
 
       {/* Section content layout */}
       <div className="relative flex w-full max-w-6xl">
-        {/* Progress Bar */}
-        <div className="relative w-2 flex-shrink-0 mr-8 hidden md:block">
-          <div className="absolute left-0 top-0 h-full w-full bg-purple-800 rounded-full" />
+        {/* Progress Bar - Themed */}
+        <div className="relative w-1.5 flex-shrink-0 mr-6 md:mr-8 hidden md:block">
+          {/* Bar track */}
+          <div className="absolute left-0 top-0 h-full w-full bg-black/30 rounded-full" />
+          {/* Bar fill with glow */}
           <motion.div
-            style={{ height: barHeight }}
-            className="absolute left-0 top-0 w-full bg-amber-400 rounded-full"
+            style={{ 
+              height: barHeight,
+              boxShadow: "0 0 10px #8b5cf6" // Glow effect for the violet bar
+            }}
+            className="absolute left-0 top-0 w-full bg-violet-500 rounded-full"
           />
         </div>
 
+        {/* Goal Cards List */}
         <div className="flex-1 space-y-8">
           {goals.map((goal, index) => (
             <motion.div
               key={index}
-              className="bg-purple-700/40 border-l-4 border-amber-400 p-6 rounded-lg shadow-lg"
+              className="bg-black/30 border-l-4 border-violet-500 p-6 rounded-lg backdrop-blur-sm"
               variants={fadeUp}
             >
-              <h3 className="text-2xl font-bold mb-2 text-amber-400">
+              <h3 className="text-xl sm:text-2xl font-bold mb-2 text-violet-300">
                 {index + 1}. {goal.title}
               </h3>
-              <p className="text-white/80">{goal.text}</p>
+              <p className="text-gray-300">{goal.text}</p>
             </motion.div>
           ))}
         </div>
       </div>
 
       <motion.p
-        className="mt-12 text-center text-xl text-purple-100"
+        className="mt-16 text-center text-xl text-violet-200"
         variants={fadeUp}
       >
-        We’re not here to disrupt; we’re here to <span className="font-bold">restore balance</span>—and build the Webnovel sanctuary we all wished existed.
+        We’re not here to disrupt; we’re here to <span className="font-bold text-violet-300">restore balance</span>—and build the Webnovel sanctuary we all wished existed.
       </motion.p>
     </motion.section>
   );

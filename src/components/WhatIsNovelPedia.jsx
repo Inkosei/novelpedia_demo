@@ -69,7 +69,7 @@ export default function WhatIsNovelPedia() {
         style={{ textShadow: "0 0 10px #8b5cf6" }} // Adds a subtle glow effect matching violet-500
         variants={fadeUp}
       >
-        Welcome home.
+        Welcome home
       </motion.h3>
       
     </motion.section>

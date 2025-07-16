@@ -91,10 +91,10 @@ export default function HeroSection() {
           className="w-full max-w-3xl mx-auto text-center p-8 rounded-2xl border border-purple-500/40 bg-gray-900/50 backdrop-blur-md shadow-[0_0_40px_rgba(168,85,247,0.5)] transition-all duration-300 mb-12"
         >
           <h2 className="text-xl md:text-3xl font-bold glowing-text mb-4">
-            BY AUTHORS - TO READERS
+            BY AUTHORS - TO AUTHORS
           </h2>
           <h2 className="text-xl md:text-3xl font-bold glowing-text">
-            TO AUTHORS - TO READERS
+            BY READERS - TO READERS
           </h2>
         </motion.div>
 

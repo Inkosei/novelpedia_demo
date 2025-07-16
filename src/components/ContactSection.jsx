@@ -13,10 +13,11 @@ export default function ContactSection() {
         Join our community of readers and authors. Be part of the revolution.
       </p>
       <div className="flex gap-4 mb-8">
-        <button className="bg-white text-purple-700 px-6 py-2 rounded shadow hover:bg-purple-100">
-          Join Newsletter
-        </button>
-        <button className="bg-transparent border border-white text-white px-6 py-2 rounded hover:bg-white hover:text-purple-700">
+
+        <button 
+          className="bg-transparent border border-white text-white px-6 py-2 rounded hover:bg-white hover:text-purple-700"
+          onClick={() => window.open('https://discord.com/invite/novelpedia', '_blank')}
+        >
           Join Discord
         </button>
       </div>

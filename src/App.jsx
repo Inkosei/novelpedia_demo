@@ -18,7 +18,7 @@ export default function App() {
           
           z-[-1]
         "
-        style={{ backgroundImage: "url('/bg-cover.png')" }}
+        style={{ backgroundImage: "url('./bg-cover.png')" }}
       ></div>
 
 

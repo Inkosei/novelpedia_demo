@@ -4,7 +4,7 @@ export default function BackgroundBooks() {
       {Array.from({ length: 20 }).map((_, i) => (
         <img
           key={i}
-          src="/book_icon.png"
+          src="./book_icon.png"
           alt="book"
           className="absolute opacity-10 animate-floating"
           style={{

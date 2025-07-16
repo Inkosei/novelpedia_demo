@@ -25,7 +25,7 @@ export default function App() {
       <Router>
         <BackgroundBooks />
 
-        <div className="relative min-h-screen font-sans overflow-x-hidden text-white">
+        <div className="relative font-sans overflow-x-hidden text-white">
           <Navbar />
           <Routes>
             <Route path="/" element={<HomePage />} />

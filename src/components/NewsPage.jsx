@@ -11,11 +11,9 @@ export default function NewsPage() {
   });
 
   return (
-    // Assuming the dark background is applied by a parent layout component
     <div className="min-h-screen pt-32 md:pt-40 text-white p-4 sm:p-8">
       <h1
         className="text-5xl md:text-6xl font-extrabold mb-12 text-center text-violet-300"
-        // This style creates the "shine" or "glow" effect, much more thematic than the old gradient
         style={{ textShadow: "0 0 15px #a78bfa, 0 0 25px #8b5cf6" }}
       >
         Latest News

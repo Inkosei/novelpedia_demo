@@ -109,20 +109,20 @@ export default function HeroSection() {
         {/* Constitution & Promise */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col lg:flex-row justify-center items-start space-y-8 lg:space-y-0 lg:space-x-24 mb-12 md:mb-16"
+          className="flex flex-col lg:flex-row justify-center lg:items-stretch gap-8 mb-12 md:mb-16"
         >
           {/* Constitution */}
-          <Link to="/constitution">
+          <Link to="/constitution" className="w-full lg:w-80">
             <motion.div
               whileHover={{ y: -5, scale: 1.02 }}
-              className="text-left p-6 rounded-lg border border-purple-500/30 bg-gray-900/40 backdrop-blur-sm shadow-xl shadow-purple-500/10 w-full lg:w-auto cursor-pointer transition-all hover:border-purple-400"
+              className="h-full text-left p-6 rounded-lg border border-purple-500/30 bg-gray-900/40 backdrop-blur-sm shadow-xl shadow-purple-500/10 cursor-pointer transition-all hover:border-purple-400 flex flex-col justify-between"
             >
-              <h3 className="text-lg md:text-xl font-bold mb-4 underline underline-offset-4 decoration-purple-400">
-                Our Constitution
-              </h3>
-              <ul className="space-y-2 text-gray-300 text-sm md:text-base">
-                {["- For Readers", "- For Authors", "- For Partners"].map(
-                  (text, idx) => (
+              <div>
+                <h3 className="text-lg md:text-xl font-bold mb-4 underline underline-offset-4 decoration-purple-400">
+                  Our Constitution
+                </h3>
+                <ul className="space-y-2 text-gray-300 text-sm md:text-base">
+                  {["- For Readers", "- For Authors"].map((text, idx) => (
                     <motion.li
                       key={idx}
                       whileHover={{ x: 5 }}
@@ -130,35 +130,37 @@ export default function HeroSection() {
                     >
                       {text}
                     </motion.li>
-                  )
-                )}
-              </ul>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
           </Link>
 
           {/* Promise */}
           <motion.div
             whileHover={{ y: -5 }}
-            className="text-left p-6 rounded-lg border border-purple-500/30 bg-gray-900/40 backdrop-blur-sm shadow-xl shadow-purple-500/10 w-full lg:w-auto"
+            className="w-full lg:w-80 h-full text-left p-6 rounded-lg border border-purple-500/30 bg-gray-900/40 backdrop-blur-sm shadow-xl shadow-purple-500/10 flex flex-col justify-between"
           >
-            <h3 className="text-lg md:text-xl font-bold mb-4 underline underline-offset-4 decoration-purple-400">
-              Our Promise
-            </h3>
-            <ul className="space-y-2 text-gray-300 text-sm md:text-base">
-              {[
-                "- Reading reimagined",
-                "- Changing the ecosystem",
-                "- Uniting the community",
-              ].map((text, idx) => (
-                <motion.li
-                  key={idx}
-                  whileHover={{ x: 5 }}
-                  className="transition-transform"
-                >
-                  {text}
-                </motion.li>
-              ))}
-            </ul>
+            <div>
+              <h3 className="text-lg md:text-xl font-bold mb-4 underline underline-offset-4 decoration-purple-400">
+                Our Promise
+              </h3>
+              <ul className="space-y-2 text-gray-300 text-sm md:text-base">
+                {[
+                  "- Reading reimagined",
+                  "- Changing the ecosystem",
+                  "- Uniting the community",
+                ].map((text, idx) => (
+                  <motion.li
+                    key={idx}
+                    whileHover={{ x: 5 }}
+                    className="transition-transform"
+                  >
+                    {text}
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
         </motion.div>
 

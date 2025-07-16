@@ -5,6 +5,7 @@ import SupportPage from './components/SupportPage';
 import RoadmapPage from './components/RoadmapPage';
 import BackgroundBooks from './components/BackgroundBooks';
 import NewsPage from './components/NewsPage';
+import ConstitutionPage from './components/ConstitutionPage';
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/constitution" element={<ConstitutionPage />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="/support" element={<SupportPage />} />
             <Route path="/roadmap" element={<RoadmapPage />} />

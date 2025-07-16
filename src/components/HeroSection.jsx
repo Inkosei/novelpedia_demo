@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import Countdown from "./Countdown"; 
 
 export default function HeroSection() {
@@ -111,27 +112,29 @@ export default function HeroSection() {
           className="flex flex-col lg:flex-row justify-center items-start space-y-8 lg:space-y-0 lg:space-x-24 mb-12 md:mb-16"
         >
           {/* Constitution */}
-          <motion.div
-            whileHover={{ y: -5 }}
-            className="text-left p-6 rounded-lg border border-purple-500/30 bg-gray-900/40 backdrop-blur-sm shadow-xl shadow-purple-500/10 w-full lg:w-auto"
-          >
-            <h3 className="text-lg md:text-xl font-bold mb-4 underline underline-offset-4 decoration-purple-400">
-              Our Constitution
-            </h3>
-            <ul className="space-y-2 text-gray-300 text-sm md:text-base">
-              {["- For Readers", "- For Authors", "- For Partners"].map(
-                (text, idx) => (
-                  <motion.li
-                    key={idx}
-                    whileHover={{ x: 5 }}
-                    className="transition-transform"
-                  >
-                    {text}
-                  </motion.li>
-                )
-              )}
-            </ul>
-          </motion.div>
+          <Link to="/constitution">
+            <motion.div
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="text-left p-6 rounded-lg border border-purple-500/30 bg-gray-900/40 backdrop-blur-sm shadow-xl shadow-purple-500/10 w-full lg:w-auto cursor-pointer transition-all hover:border-purple-400"
+            >
+              <h3 className="text-lg md:text-xl font-bold mb-4 underline underline-offset-4 decoration-purple-400">
+                Our Constitution
+              </h3>
+              <ul className="space-y-2 text-gray-300 text-sm md:text-base">
+                {["- For Readers", "- For Authors", "- For Partners"].map(
+                  (text, idx) => (
+                    <motion.li
+                      key={idx}
+                      whileHover={{ x: 5 }}
+                      className="transition-transform"
+                    >
+                      {text}
+                    </motion.li>
+                  )
+                )}
+              </ul>
+            </motion.div>
+          </Link>
 
           {/* Promise */}
           <motion.div

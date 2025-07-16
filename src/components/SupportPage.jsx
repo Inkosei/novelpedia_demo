@@ -82,22 +82,25 @@ const SupportPage = () => {
           <div className="w-full space-y-4">
             {/* Themed Buttons */}
             <motion.button
-              className="flex items-center justify-center w-full border border-violet-500 bg-transparent text-violet-300 font-bold py-3 px-4 rounded-lg transition-colors duration-300 hover:bg-violet-500 hover:text-white"
+              className="flex items-center justify-center w-full border border-violet-500 bg-transparent text-violet-300 font-bold py-3 px-4 rounded-lg transition-colors duration-300 hover:bg-violet-500 hover:text-white cursor-pointer"
               whileHover={buttonHoverVariants.hover}
+              onClick={() => window.open('https://github.com/Inkosei', '_blank')}
             >
               <FaGithub className="h-5 w-5 mr-3" />
               Follow on GitHub
             </motion.button>
             <motion.button
-              className="flex items-center justify-center w-full border border-violet-500 bg-transparent text-violet-300 font-bold py-3 px-4 rounded-lg transition-colors duration-300 hover:bg-violet-500 hover:text-white"
+              className="flex items-center justify-center w-full border border-violet-500 bg-transparent text-violet-300 font-bold py-3 px-4 rounded-lg transition-colors duration-300 hover:bg-violet-500 hover:text-white cursor-pointer"
               whileHover={buttonHoverVariants.hover}
+              onClick={() => window.open('https://discord.com/invite/novelpedia', '_blank')}
             >
               <FaDiscord className="h-5 w-5 mr-3" />
               Join our Discord
             </motion.button>
             <motion.button
-              className="flex items-center justify-center w-full border border-violet-500 bg-transparent text-violet-300 font-bold py-3 px-4 rounded-lg transition-colors duration-300 hover:bg-violet-500 hover:text-white"
+              className="flex items-center justify-center w-full border border-violet-500 bg-transparent text-violet-300 font-bold py-3 px-4 rounded-lg transition-colors duration-300 hover:bg-violet-500 hover:text-white cursor-pointer"
               whileHover={buttonHoverVariants.hover}
+              onClick={() => window.open('https://www.linkedin.com/company/karmicsphere-media/', '_blank')}
             >
               <FaLinkedinIn className="h-5 w-5 mr-3" />
               Connect on LinkedIn
@@ -120,8 +123,9 @@ const SupportPage = () => {
           </p>
           {/* Themed Primary CTA Button */}
           <motion.button
-            className="flex items-center justify-center w-full bg-violet-600 hover:bg-violet-500 text-white font-bold py-4 px-6 rounded-lg text-lg transition-colors duration-300 hover:shadow-lg hover:shadow-violet-500/40"
+            className="flex items-center justify-center w-full bg-violet-600 hover:bg-violet-500 text-white font-bold py-4 px-6 rounded-lg text-lg transition-colors duration-300 hover:shadow-lg hover:shadow-violet-500/40 cursor-pointer"
             whileHover={buttonHoverVariants.hover}
+            onClick={() => window.open('https://www.patreon.com/Novelpedia', '_blank')}
           >
             <FaHeart className="h-6 w-6 mr-3" />
             Support on Patreon

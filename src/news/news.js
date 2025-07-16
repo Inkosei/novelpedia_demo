@@ -1,12 +1,12 @@
 export const newsItems = [
   {
-    date: "15-07-2025",
+    date: "16-07-2025",
     title: "Epic Update 🎉",
     content: `
 We launched a new site today! 🎊
-- New design
-- New features
-- New content
+- 99% kiri 1% kiri's black cat
+- Brand new look, amazing wallpaper right??
+- House of horrors > LOTM
     `,
   },
 

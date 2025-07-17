@@ -16,7 +16,7 @@ export default function App() {
           bg-cover bg-center
           bg-no-repeat
           opacity-100
-          
+          w-full h-full
           z-[-1]
         "
         style={{ backgroundImage: "url('./bg-cover.png')" }}
@@ -26,7 +26,7 @@ export default function App() {
       <Router>
         <ScrollToTop />
 
-        <div className="relative font-sans overflow-x-hidden text-white">
+        <div className="font-sans overflow-x-hidden text-white">
           <Navbar />
           <Routes>
             <Route path="/" element={<HomePage />} />

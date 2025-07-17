@@ -52,8 +52,8 @@ export default function HeroSection() {
   // JSX
   // ---------------------------
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center text-white relative px-4 md:px-8 py-20 pt-24 md:pt-28">
-      {/* Background Effects */}
+    <section className="min-h-screen flex flex-col justify-center items-center text-white relative px-4 md:px-8 pt-24 md:pt-28 pb-10">
+
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-radial from-purple-900/20 via-transparent to-transparent pointer-events-none" />
 
@@ -173,22 +173,8 @@ export default function HeroSection() {
           "You've asked for better, so we built it."
         </motion.blockquote>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2 }}
-          className="mt-16 md:mt-20"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="text-purple-200 text-sm flex flex-col items-center"
-          >
-            <span className="mb-2">Scroll below for contents</span>
-            <div className="w-0.5 h-8 bg-gradient-to-b from-purple-400 to-transparent"></div>
-          </motion.div>
-        </motion.div>
+      
+
       </motion.div>
     </section>
   );

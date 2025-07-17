@@ -5,7 +5,7 @@ const authorPledges = [
   "You retain full ownership of your work—always.",
   "You control how your stories are presented and marketed.",
   "We will tirelessly protect your copyright and assist with DMCA takedowns.",
-  "We’ll promote your tip jars, Patreons, and Ko-fi to help sustain your art.",
+  "We’ll promote your tip jars, Patreon, and Ko-fi to help sustain your craft.",
   "We provide powerful, intuitive tools for creating, analyzing, and engaging your audience.",
   "We defend you against unfair reviews and malicious attacks.",
   "Your mental health matters; we’ll handle the noise, so you can write freely.",

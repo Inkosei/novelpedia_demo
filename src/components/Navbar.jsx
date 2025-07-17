@@ -1,11 +1,43 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+
+  // Handle scroll lock for mobile menu
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${window.scrollY}px`;
+      document.body.style.width = '100%';
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+    };
+  }, [isMobileMenuOpen]);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -75,7 +107,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute top-full left-0 right-0 w-full bg-black/80 backdrop-blur-lg border-b border-violet-700/30 shadow-xl shadow-violet-500/10 md:hidden"
+            className="absolute top-full left-0 right-0 w-full bg-black/95 backdrop-blur-lg border-b border-violet-700/30 shadow-xl shadow-violet-500/10 md:hidden max-h-[calc(100vh-80px)] overflow-y-auto"
           >
             {navItems.map((item, index) => (
               <motion.div
@@ -86,7 +118,13 @@ export default function Navbar() {
               >
                 <Link
                   to={item.path}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    // Small delay to ensure proper scroll restoration
+                    setTimeout(() => {
+                      window.scrollTo(0, 0);
+                    }, 100);
+                  }}
                   className={`relative block px-8 py-5 text-lg font-medium hover:bg-violet-500/10 transition-colors border-t border-violet-900/50 ${
                     location.pathname === item.path ? 'text-violet-300' : 'text-gray-300'
                   }`}

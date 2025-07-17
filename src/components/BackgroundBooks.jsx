@@ -1,12 +1,12 @@
 export default function BackgroundBooks() {
   return (
-    <div className="fixed inset-0 z-10 overflow-hidden pointer-events-none">
+    <div className="fixed inset-0 z-10 overflow-hidden pointer-events-none touch-none">
       {Array.from({ length: 20 }).map((_, i) => (
         <img
           key={i}
           src="./book_icon.png"
           alt="book"
-          className="absolute opacity-10 animate-floating"
+          className="absolute opacity-10 animate-floating pointer-events-none"
           style={{
             top: `${Math.random() * 100}%`,
             left: `${Math.random() * 100}%`,

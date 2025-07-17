@@ -37,7 +37,7 @@ export default function ConstitutionPage() {
   };
 
   return (
-    <div className="min-h-screen w-full px-4 pt-32 pb-20 md:pt-40 text-gray-200 flex justify-center">
+    <div className="min-h-screen w-full px-4 pt-32 pb-20 md:pt-40 text-gray-200 flex justify-center touch-pan-y">
       <motion.div
         className="max-w-7xl w-full flex flex-col items-center"
         variants={containerVariants}

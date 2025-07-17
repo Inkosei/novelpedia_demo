@@ -26,7 +26,7 @@ export default function App() {
       <Router>
         <ScrollToTop />
 
-        <div className="font-sans overflow-x-hidden text-white">
+        <div className="relative font-sans text-white min-h-screen">
           <Navbar />
           <Routes>
             <Route path="/" element={<HomePage />} />

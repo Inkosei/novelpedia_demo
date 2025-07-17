@@ -3,6 +3,24 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Ensure proper mobile scrolling */
+@media (max-width: 768px) {
+  html, body {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Prevent horizontal scroll on mobile */
+  body {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 .glowing-text {
   color: #d8b4fe;

@@ -3,9 +3,9 @@ import Navbar from "./components/Navbar";
 import { HomePage } from './components/HomePage';
 import SupportPage from './components/SupportPage';
 import RoadmapPage from './components/RoadmapPage';
-import BackgroundBooks from './components/BackgroundBooks';
 import NewsPage from './components/NewsPage';
 import ConstitutionPage from './components/ConstitutionPage';
+import ScrollToTop from './components/SrollToTop';
 
 export default function App() {
   return (
@@ -24,7 +24,7 @@ export default function App() {
 
 
       <Router>
-        <BackgroundBooks />
+        <ScrollToTop />
 
         <div className="relative font-sans overflow-x-hidden text-white">
           <Navbar />

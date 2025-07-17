@@ -17,9 +17,8 @@ export default function App() {
           bg-no-repeat
           opacity-100
           w-full h-full
-          z-[-1]
         "
-        style={{ backgroundImage: "url('./bg-cover.png')" }}
+        style={{ backgroundImage: "url('./bg-cover.webp')" }}
       ></div>
 
 

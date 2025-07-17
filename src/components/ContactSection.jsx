@@ -23,7 +23,7 @@ export default function ContactSection() {
       </div>
 
       <span className="text-purple-200 text-sm">
-        © 2024 NovelPedia. Built by readers, for readers. Coming soon.
+        © 2025 NovelPedia. Built by readers, for readers. Coming soon.
       </span>
     </motion.div>
   );

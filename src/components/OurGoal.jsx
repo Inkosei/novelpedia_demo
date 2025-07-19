@@ -73,7 +73,7 @@ export default function OurGoal() {
     <motion.section
       id="goal"
       ref={ref}
-      className="w-full py-20 px-4 md:px-12 text-gray-200 flex flex-col items-center"
+      className="w-full pt-16 px-4 md:px-12 text-gray-200 flex flex-col items-center"
       variants={container}
       initial="hidden"
       whileInView="show"

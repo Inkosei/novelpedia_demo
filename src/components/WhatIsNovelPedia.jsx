@@ -27,7 +27,7 @@ export default function WhatIsNovelPedia() {
   return (
     <motion.section
       id="what"
-      className="w-full py-24 px-4 flex flex-col items-center justify-center"
+      className="w-full px-4 flex flex-col items-center justify-center"
       variants={container}
       initial="hidden"
       whileInView="show"

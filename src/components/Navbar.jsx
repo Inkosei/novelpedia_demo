@@ -57,7 +57,7 @@ export default function Navbar() {
       <motion.div whileHover={{ scale: 1.05 }} className="text-xl md:text-2xl font-bold">
         <Link to="/" className="flex items-center gap-2 hover:text-white transition-colors">
           {/* Replace with your icon's path */}
-          <img src="./logo-icon.png" alt="NovelPedia Icon" className="h-8 w-8" />
+          <img src="./logo-icon.webp" alt="NovelPedia Icon" className="h-8 w-8" />
           <span style={{ textShadow: "0 0 8px #c4b5fd" }}>
             Novel<span className="text-violet-400">Pedia</span>
           </span>

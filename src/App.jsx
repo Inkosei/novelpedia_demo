@@ -10,6 +10,13 @@ import ScrollToTop from './components/SrollToTop';
 export default function App() {
   return (
  <>
+       <Helmet>
+        <title>NovelPedia | Read, Write & Explore Webnovels</title>
+        <meta
+          name="description"
+          content="Reading and writing reimagined on NovelPedia. This is a platform for the authors and readers, and made by authors and readers. Join us in the revolution of webnovels community."
+        />
+      </Helmet>
       <div
         className="
           fixed inset-0

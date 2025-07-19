@@ -40,7 +40,6 @@ export default function Navbar() {
   }, [location.pathname]);
 
   const navItems = [
-    { name: "Home", path: "/" },
     { name: "Constitution", path: "/constitution"},
     { name: "News", path: "/news" },
     { name: "Support", path: "/support" },

@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
 Sitemap: https://novelpedia.net/sitemap.xml
-
-# Kiri is the best developer frfr.

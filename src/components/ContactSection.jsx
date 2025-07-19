@@ -21,7 +21,7 @@ export default function ContactSection() {
             <div className="flex gap-4 mb-8 justify-center">
                 <button
                     className="bg-violet-700 hover:bg-violet-600 text-white px-6 py-2 rounded-md shadow-md transition-colors duration-300"
-                    onClick={() => window.open('https://discord.gg/f6gvUmzBr6', '_blank')}
+                    onClick={() => window.open('https://discord.gg/FwubN8S6aZ', '_blank')}
                 >
                     Join Discord
                 </button>

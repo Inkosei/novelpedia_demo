@@ -71,7 +71,7 @@ const SupportPage = () => {
             <motion.button
               className="flex items-center justify-center w-full border border-violet-500 bg-transparent text-violet-300 font-bold py-3 px-4 rounded-lg transition-colors duration-300 hover:bg-violet-500 hover:text-white cursor-pointer"
               whileHover={{ y: -3, transition: { duration: 0.2 } }}
-              onClick={() => window.open('https://discord.com/invite/novelpedia', '_blank')}
+              onClick={() => window.open('https://discord.gg/FwubN8S6aZ', '_blank')}
             >
               <FaDiscord className="h-5 w-5 mr-3" />
               Join our Discord

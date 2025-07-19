@@ -1,4 +1,5 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import Helmet from 'react-helmet';
 import Navbar from "./components/Navbar";
 import { HomePage } from './components/HomePage';
 import SupportPage from './components/SupportPage';

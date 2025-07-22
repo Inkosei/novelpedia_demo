@@ -7,12 +7,14 @@ import RoadmapPage from './components/RoadmapPage';
 import NewsPage from './components/NewsPage';
 import ConstitutionPage from './components/ConstitutionPage';
 import ScrollToTop from './components/SrollToTop';
+import AuthorPage from './components/AuthorsPage';
+import ReadersPage from './components/ReadersPage';
 
 export default function App() {
   return (
  <>
        <Helmet>
-        <title>NovelPedia | Read, Write & Explore Webnovels</title>
+        <title>NovelPedia | By authors, for authors. By readers, for readers</title>
         <meta
           name="description"
           content="Reading and writing reimagined on NovelPedia. This is a platform for the authors and readers, and made by authors and readers. Join us in the revolution of webnovels community."
@@ -41,6 +43,8 @@ export default function App() {
             <Route path="/news" element={<NewsPage />} />
             <Route path="/support" element={<SupportPage />} />
             <Route path="/roadmap" element={<RoadmapPage />} />
+            <Route path="/authors" element={<AuthorPage />} />
+            <Route path="/readers" element={<ReadersPage />} />
           </Routes>
         </div>
 

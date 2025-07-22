@@ -14,11 +14,22 @@ export default function App() {
   return (
  <>
        <Helmet>
+
         <title>NovelPedia | By authors, for authors. By readers, for readers</title>
-        <meta
-          name="description"
-          content="Reading and writing reimagined on NovelPedia. This is a platform for the authors and readers, and made by authors and readers. Join us in the revolution of webnovels community."
-        />
+        <meta name="title" content="NovelPedia | By authors, for authors. By readers, for readers" />
+        <meta name="description" content="Reading and writing reimagined on NovelPedia. A platform created for authors and readers to share, grow, and connect." />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://novelpedia.net/" />
+        <meta property="og:title" content="NovelPedia | By authors, for authors. By readers, for readers" />
+        <meta property="og:description" content="Reading and writing reimagined on NovelPedia. A platform created for authors and readers to share, grow, and connect." />
+        <meta property="og:image" content="https://novelpedia.net/logo.webp" /> 
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://novelpedia.net/" />
+        <meta property="twitter:title" content="NovelPedia | By authors, for authors. By readers, for readers" />
+        <meta property="twitter:description" content="Reading and writing reimagined on NovelPedia. A platform created for authors and readers to share, grow, and connect." />
+        <meta property="twitter:image" content="https://novelpedia.net/logo.webp" />
       </Helmet>
       <div
         className="

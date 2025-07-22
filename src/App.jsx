@@ -15,7 +15,7 @@ export default function App() {
  <>
        <Helmet>
 
-        <title>NovelPedia | By authors, for authors. By readers, for readers</title>
+        <title>NovelPedia</title>
         <meta name="title" content="NovelPedia | By authors, for authors. By readers, for readers" />
         <meta name="description" content="Reading and writing reimagined on NovelPedia. A platform created for authors and readers to share, grow, and connect." />
 

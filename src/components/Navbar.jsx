@@ -44,6 +44,10 @@ export default function Navbar() {
     { name: "News", path: "/news" },
     { name: "Support", path: "/support" },
     { name: "Roadmap", path: "/roadmap" },
+    { name: "Authors", path: "/authors" },
+    { name: "Readers", path: "/readers" },
+    { name: "Privacy Policy", path: "/privacy-policy" },
+    
   ];
 
   return (

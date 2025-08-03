@@ -9,6 +9,7 @@ import ConstitutionPage from './components/ConstitutionPage';
 import ScrollToTop from './components/SrollToTop';
 import AuthorPage from './components/AuthorsPage';
 import ReadersPage from './components/ReadersPage';
+import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 
 export default function App() {
   return (
@@ -56,6 +57,7 @@ export default function App() {
             <Route path="/roadmap" element={<RoadmapPage />} />
             <Route path="/authors" element={<AuthorPage />} />
             <Route path="/readers" element={<ReadersPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           </Routes>
         </div>
 

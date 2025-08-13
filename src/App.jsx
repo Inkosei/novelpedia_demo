@@ -10,6 +10,8 @@ import ScrollToTop from './components/SrollToTop';
 import AuthorPage from './components/AuthorsPage';
 import ReadersPage from './components/ReadersPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
+import ContributorsPage from './components/ContributorsPage';
+import PartnersPage from './components/PartnersPage';
 
 export default function App() {
   return (
@@ -58,6 +60,8 @@ export default function App() {
             <Route path="/authors" element={<AuthorPage />} />
             <Route path="/readers" element={<ReadersPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/contributors" element={<ContributorsPage />} />
+            <Route path="/partners" element={<PartnersPage />} />
           </Routes>
         </div>
 

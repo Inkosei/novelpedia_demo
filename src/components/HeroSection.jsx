@@ -100,7 +100,7 @@ export default function HeroSection() {
           variants={itemVariants}
           className="w-full max-w-3xl mx-auto mb-12"
         >
-          <Countdown targetDateUTC="2025-08-15T00:00:00Z" />
+          <Countdown targetDateUTC="2025-08-15T05:00:00Z" />
         </motion.div>
 
         {/* Navigation Boxes */}

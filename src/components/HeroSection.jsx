@@ -100,7 +100,8 @@ export default function HeroSection() {
           variants={itemVariants}
           className="w-full max-w-3xl mx-auto mb-12"
         >
-          <Countdown targetDateUTC="2025-08-15T10:00:00Z" />
+          {/* Countdown to August 15, 2025, 7pm UTC-8 (Pacific Time) = August 16, 2025, 03:00am UTC */}
+          <Countdown targetDateUTC="2025-08-16T03:00:00Z" />
         </motion.div>
 
         {/* Navigation Boxes */}

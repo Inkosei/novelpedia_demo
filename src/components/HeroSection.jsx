@@ -1,9 +1,19 @@
 "use client";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import Countdown from "./Countdown";
+import { useEffect, useState } from "react";
 
 export default function HeroSection() {
+  const [showConfetti, setShowConfetti] = useState(false);
+
+  useEffect(() => {
+    // Trigger confetti burst after component mounts
+    const timer = setTimeout(() => {
+      setShowConfetti(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -49,6 +59,43 @@ export default function HeroSection() {
     <section className="min-h-screen flex flex-col justify-center items-center text-white relative px-4 md:px-8 pt-24 md:pt-28 pb-10">
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-radial from-purple-900/20 via-transparent to-transparent pointer-events-none" />
+      
+      {/* Confetti Burst Effect */}
+      {showConfetti && (
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {[...Array(50)].map((_, i) => (
+            <motion.div
+              key={`burst-${i}`}
+              className="absolute w-3 h-3 rounded-full"
+              style={{
+                left: "50%",
+                top: "50%",
+                background: [
+                  "#FFD700", "#FFA500", "#FF6347", "#FF69B4", "#00CED1", "#32CD32"
+                ][Math.floor(Math.random() * 6)],
+              }}
+              initial={{
+                x: 0,
+                y: 0,
+                scale: 0,
+                opacity: 1,
+              }}
+              animate={{
+                x: (Math.random() - 0.5) * 800,
+                y: (Math.random() - 0.5) * 600,
+                scale: [0, 1, 0],
+                opacity: [1, 1, 0],
+                rotate: [0, Math.random() * 720],
+              }}
+              transition={{
+                duration: 3 + Math.random() * 2,
+                ease: "easeOut",
+                delay: Math.random() * 0.5,
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       <motion.div
         variants={containerVariants}
@@ -95,13 +142,154 @@ export default function HeroSection() {
           </h2>
         </motion.div>
 
-        {/* Countdown */}
+        {/* Atlas Announcement */}
         <motion.div
           variants={itemVariants}
-          className="w-full max-w-3xl mx-auto mb-12"
+          className="w-full max-w-4xl mx-auto mb-12"
         >
-          {/* Countdown to August 15, 2025, 7pm UTC-8 (Pacific Time) = August 16, 2025, 03:00am UTC */}
-          <Countdown targetDateUTC="2025-08-16T03:00:00Z" />
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            whileHover={{ scale: 1.02 }}
+            className="relative overflow-hidden p-8 rounded-2xl border-2 border-purple-500/60 bg-gradient-to-r from-purple-900/40 via-blue-900/40 to-purple-900/40 backdrop-blur-md shadow-[0_0_50px_rgba(168,85,247,0.6)]"
+          >
+            {/* Confetti Background */}
+            <div className="absolute inset-0 pointer-events-none">
+              {[...Array(20)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-2 h-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                  }}
+                  animate={{
+                    y: [0, -20, 0],
+                    rotate: [0, 360],
+                    opacity: [0.7, 1, 0.7],
+                  }}
+                  transition={{
+                    duration: 2 + Math.random() * 2,
+                    repeat: Infinity,
+                    delay: Math.random() * 2,
+                  }}
+                />
+              ))}
+              {[...Array(15)].map((_, i) => (
+                <motion.div
+                  key={`star-${i}`}
+                  className="absolute w-1 h-1 bg-blue-400 rounded-full"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                  }}
+                  animate={{
+                    scale: [1, 1.5, 1],
+                    opacity: [0.5, 1, 0.5],
+                  }}
+                  transition={{
+                    duration: 1.5 + Math.random() * 1,
+                    repeat: Infinity,
+                    delay: Math.random() * 1.5,
+                  }}
+                />
+              ))}
+              
+              {/* Floating Sparkles */}
+              {[...Array(12)].map((_, i) => (
+                <motion.div
+                  key={`sparkle-${i}`}
+                  className="absolute w-1 h-1 rounded-full"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                    background: [
+                      "#FFD700", "#FF69B4", "#00CED1", "#32CD32", "#FF6347", "#9370DB"
+                    ][Math.floor(Math.random() * 6)],
+                  }}
+                  animate={{
+                    y: [0, -30, 0],
+                    x: [0, Math.random() * 20 - 10, 0],
+                    opacity: [0, 1, 0],
+                    scale: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: 3 + Math.random() * 2,
+                    repeat: Infinity,
+                    delay: Math.random() * 3,
+                  }}
+                />
+              ))}
+            </div>
+            
+            {/* Main Content */}
+            <div className="relative z-10 text-center">
+              <motion.div
+                animate={{
+                  boxShadow: [
+                    "0 0 20px rgba(168, 85, 247, 0.4)",
+                    "0 0 40px rgba(168, 85, 247, 0.8)",
+                    "0 0 20px rgba(168, 85, 247, 0.4)",
+                  ],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="inline-block mb-4"
+              >
+                <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-400 animate-pulse">
+                  🎉 NEW RELEASE! 🎉
+                </span>
+              </motion.div>
+              
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+                Introducing{" "}
+                <motion.span 
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500"
+                  animate={{
+                    filter: [
+                      "drop-shadow(0 0 10px rgba(255, 215, 0, 0.5))",
+                      "drop-shadow(0 0 20px rgba(255, 165, 0, 0.8))",
+                      "drop-shadow(0 0 10px rgba(255, 215, 0, 0.5))",
+                    ],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  Atlas
+                </motion.span>
+              </h2>
+              
+              <p className="text-lg md:text-xl text-gray-300 mb-6">
+                The next evolution of NovelPedia is here!
+              </p>
+              
+              <motion.a
+                href="https://atlas.novelpedia.net"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                animate={{
+                  y: [0, -5, 0],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="inline-block px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-black font-bold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-yellow-400/50"
+              >
+                🚀 Launch Atlas Now
+              </motion.a>
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* Navigation Boxes */}

@@ -47,8 +47,8 @@ export default function Navbar() {
     { name: "Authors", path: "/authors" },
     { name: "Readers", path: "/readers" },
     { name: "Privacy Policy", path: "/privacy-policy" },
-    { name: "Contributors", path: "/contributors" },
-    { name: "Partners", path: "/partners" }
+    // { name: "Contributors", path: "/contributors" },
+    // { name: "Partners", path: "/partners" }
     
   ];
 

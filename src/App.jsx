@@ -60,8 +60,8 @@ export default function App() {
             <Route path="/authors" element={<AuthorPage />} />
             <Route path="/readers" element={<ReadersPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-            <Route path="/contributors" element={<ContributorsPage />} />
-            <Route path="/partners" element={<PartnersPage />} />
+            {/* <Route path="/contributors" element={<ContributorsPage />} />
+            <Route path="/partners" element={<PartnersPage />} /> */}
           </Routes>
         </div>
 

@@ -29,7 +29,7 @@ const NewsContentRenderer = ({ content }) => {
           case 'link':
             return (
               <a key={index} href={item.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-lg transition-colors mt-2">
-                <FaDiscord />
+                
                 {item.text}
               </a>
             );

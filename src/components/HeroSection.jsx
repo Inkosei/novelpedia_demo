@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import RemotionLaunchBadge from "./RemotionLaunchBadge";
 
 export default function HeroSection() {
   const [showConfetti, setShowConfetti] = useState(false);
@@ -142,7 +143,7 @@ export default function HeroSection() {
           </h2>
         </motion.div>
 
-        {/* Atlas Announcement */}
+        {/* Author Dashboard Announcement */}
         <motion.div
           variants={itemVariants}
           className="w-full max-w-4xl mx-auto mb-12"
@@ -225,25 +226,7 @@ export default function HeroSection() {
             
             {/* Main Content */}
             <div className="relative z-10 text-center">
-              <motion.div
-                animate={{
-                  boxShadow: [
-                    "0 0 20px rgba(168, 85, 247, 0.4)",
-                    "0 0 40px rgba(168, 85, 247, 0.8)",
-                    "0 0 20px rgba(168, 85, 247, 0.4)",
-                  ],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="inline-block mb-4"
-              >
-                <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-400 animate-pulse">
-                  🎉 NEW RELEASE! 🎉
-                </span>
-              </motion.div>
+              <RemotionLaunchBadge />
               
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
                 Introducing{" "}
@@ -262,16 +245,20 @@ export default function HeroSection() {
                     ease: "easeInOut",
                   }}
                 >
-                  Atlas
+                  NovelPedia Author's Dashboard
                 </motion.span>
               </h2>
               
               <p className="text-lg md:text-xl text-gray-300 mb-6">
-                The next evolution of NovelPedia is here!
+                Launch your stories, manage your space, and grow your readership.
+              </p>
+
+              <p className="text-base md:text-lg text-violet-200/90 mb-6 italic">
+                Built for storytellers, personalized for every NovelPedia author.
               </p>
               
               <motion.a
-                href="https://atlas.novelpedia.net"
+                href="https://author.novelpedia.net"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -284,9 +271,9 @@ export default function HeroSection() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="inline-block px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-black font-bold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-yellow-400/50"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-black font-bold text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-yellow-400/50"
               >
-                🚀 Launch Atlas Now
+                🚀 Launch Author Dashboard
               </motion.a>
             </div>
           </motion.div>

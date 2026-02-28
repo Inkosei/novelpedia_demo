@@ -23,6 +23,7 @@
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.6.3",
     "react-tsparticles": "^2.12.2",
+    "remotion": "^4.0.429",
     "tailwindcss": "^4.1.11",
     "tsparticles": "^3.8.1",
     "tsparticles-engine": "^2.12.0"

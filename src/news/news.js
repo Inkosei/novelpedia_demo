@@ -1,36 +1,34 @@
 export const newsItems = [
     {
     date: "28-08-2025", 
-    title: "Atlas: Building the Home of Every Story 🌍",
+      title: "NovelPedia Author's Dashboard Is Live ✨",
     content: [
-      { type: 'paragraph', text: 'It’s been a few weeks since Atlas launched, and many of you have already started exploring it. We wanted to take a moment to formally introduce Atlas, explain what it is, and share where it is headed next.' },
+        { type: 'paragraph', text: 'The NovelPedia Author Dashboard is now live at author.novelpedia.net. This launch is dedicated to helping authors publish smarter, track progress, and manage their creative identity in one place.' },
       
-      { type: 'heading', text: 'What is Atlas?' },
-      { type: 'paragraph', text: 'Atlas is our universal catalog of novels. Every story gets its own title card, a dedicated page with the book’s title, author, cover, description, and a link to where it can be read. This makes sure every story can be found, remembered, and revisited.' },
-      { type: 'paragraph', text: 'Think of Atlas as a growing map of literature, connecting stories across all genres, cultures, and platforms.' },
+        { type: 'heading', text: 'What is the Author Dashboard?' },
+        { type: 'paragraph', text: 'It is your command center for publishing and managing your stories on NovelPedia. You can organize your titles, maintain your author profile, and stay in control of your content flow.' },
+        { type: 'paragraph', text: 'Think of it as your personal studio: built for writers, shaped by real author workflows.' },
 
-      { type: 'heading', text: 'Why Atlas Matters' },
-      { type: 'paragraph', text: 'Our mission is bold: no novel should ever disappear into obscurity. Atlas gives authors recognition and readers a simple way to discover works they might never have stumbled upon otherwise. It is not just a tool, it is the beginning of a global literary map.' },
+        { type: 'heading', text: 'Why This Launch Matters' },
+        { type: 'paragraph', text: 'Authors are the heart of NovelPedia. This dashboard gives creators a more direct and personalized way to build, update, and grow their presence with fewer barriers.' },
 
-      { type: 'heading', text: 'For Readers' },
-      { type: 'paragraph', text: 'Atlas makes discovery effortless:' },
+        { type: 'heading', text: 'What Authors Can Do Right Now' },
       { type: 'list', items: [
-        'Instantly look up a novel’s title card with a link to its source.',
-        'Browse by genre, tags, or popularity.',
-        'Explore trending novels alongside overlooked treasures without switching platforms.',
-        'Bookmark novels, build your own personal library, and share it with others.'
+          'Manage published stories from one clean dashboard.',
+          'Update author information and profile identity.',
+          'Prepare your library for better discoverability.',
+          'Launch faster with a workflow designed for creators.'
       ] },
-      { type: 'paragraph', text: 'And this is only the start. Future updates will expand browsing with filters like random shuffle, review count, view count, and more. Exploration will become even easier and more fun.' },
-      { type: 'paragraph', text: 'If it exists, Atlas is where you will find it.' },
+        { type: 'paragraph', text: 'This is only the beginning. More author-first tools and quality-of-life updates are already on the roadmap.' },
 
       { type: 'heading', text: 'Looking Ahead' },
-      { type: 'paragraph', text: 'We see Atlas as a library for the digital age. With every story added, it becomes richer, more useful, and more complete. Over time, it will grow into a living archive where stories cross cultures and generations.' },
+        { type: 'paragraph', text: 'Our long-term vision remains the same: empower storytellers and make sure great novels never go unseen.' },
 
       { type: 'heading', text: 'What’s Next' },
-      { type: 'paragraph', text: 'Atlas has only just begun. Our goal is to make sure no story is ever lost, and that every novel has a permanent home. With your support, it will keep expanding, evolving, and connecting readers and authors worldwide.' },
-      { type: 'paragraph', text: 'Stay tuned. There is much more to come.' },
+        { type: 'paragraph', text: 'We will continue improving the author experience step by step with your feedback. Thank you for building this future with us.' },
+        { type: 'paragraph', text: 'Welcome to your new home base, authors.' },
 
-      { type: 'link', href: 'https://atlas.novelpedia.net', text: 'Visit Atlas' }
+        { type: 'link', href: 'https://author.novelpedia.net', text: 'Launch Author Dashboard' }
     ],
   },
   {

@@ -1,0 +1,29 @@
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - -t
+      - us-central1-docker.pkg.dev/$PROJECT_ID/novelpedia/novelpedia-site:$BUILD_ID
+      - .
+
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - us-central1-docker.pkg.dev/$PROJECT_ID/novelpedia/novelpedia-site:$BUILD_ID
+
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - novelpedia-site
+      - --image
+      - us-central1-docker.pkg.dev/$PROJECT_ID/novelpedia/novelpedia-site:$BUILD_ID
+      - --region
+      - us-central1
+      - --platform
+      - managed
+      - --allow-unauthenticated
+
+images:
+  - us-central1-docker.pkg.dev/$PROJECT_ID/novelpedia/novelpedia-site:$BUILD_ID

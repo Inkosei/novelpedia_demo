@@ -27,3 +27,6 @@ steps:
 
 images:
   - us-central1-docker.pkg.dev/$PROJECT_ID/novelpedia/novelpedia-site:$BUILD_ID
+
+options:
+  logging: CLOUD_LOGGING_ONLY
